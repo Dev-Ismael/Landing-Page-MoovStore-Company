@@ -1,0 +1,70 @@
+.navbar{
+    .row{
+        width: 100%;
+        
+        .logo{
+            text-align: right;
+        }
+        .logo img{
+            height: 35px;
+        }
+        .social-media{
+            a i{
+               color: $black;
+               font-size: 18px;
+               margin: 10px 2px;
+            } 
+            a{
+               &:hover{
+                   text-decoration: none;
+               }
+           }
+        }
+        .search-box{
+            display: flex;
+            input{
+                border: 1px solid #ced4da;
+                border-radius: 0px;
+                &:focus{
+                    box-shadow: none;
+                }
+            }
+            select{
+                border: 1px solid #ced4da;
+                border-radius: 0px;
+                border-left: 0px;
+                &:focus{
+                    box-shadow: none;
+                }
+            }
+            button{
+                position: relative;
+                border-radius: 0px;
+                outline: none;
+                border: none;
+                background-color: $mainColor;
+                color: $white;
+                padding: 0px 10px;
+                span{
+                    position: absolute;
+                    right: -8px;
+                    top: 25%;
+                    width: 0;
+                    height: 0;
+                    border-top: 10px solid transparent;
+                    border-left: 10px solid $mainColor;
+                    border-bottom: 10px solid transparent;
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+/*========================================
+=========== Responsive
+===========================================*/
+@media( max-width: 960px){
+    .social-media{
+        display: none;
+    }
+}

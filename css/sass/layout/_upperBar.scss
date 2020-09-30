@@ -1,0 +1,43 @@
+.upper-bar{
+    margin: 10px 0px;
+    font-size: 14px !important;
+    .list-unstyled{
+        display: flex;
+    }
+    .dropdown{
+        .btn{ 
+            padding: 0px ;
+            background-color: transparent;
+            color: $grayColor;
+            border: none;
+            outline: none;
+            &:focus{
+                box-shadow: none;
+                border: none;
+                outline: none;
+            }
+        }
+        .dropdown-menu.show{
+            padding: 0px;
+            min-width: 50px;
+            .dropdown-item{
+                &:active{
+                    background-color: $grayColor ;
+                }
+            }
+        }
+    }
+    ul li{
+        padding: 0px 10px;
+        border-left: 1px solid $grayColor;
+        &:last-of-type {
+            border: none;
+        }
+    }
+    ul li a {
+        color: $grayColor ;
+        &:hover{
+            text-decoration: none
+        }
+    }
+}

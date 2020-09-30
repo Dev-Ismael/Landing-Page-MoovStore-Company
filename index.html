@@ -1,0 +1,465 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <title> MOOV </title>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <!-- IE Compatibility Meta -->
+        <meta http-equiv="X-UA-Compatibale" content="IE-=edge">
+        <!-- Mobile meta-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">   
+
+        <!-- Strat favicon -->
+            <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+            <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+            <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+            <link rel="manifest" href="images/favicon/manifest.json">
+            <meta name="msapplication-TileColor" content="#ffffff">
+            <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+            <meta name="theme-color" content="#ffffff"> 
+        <!--  End favicon -->
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet">
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Css File -->
+        <link rel="stylesheet" href="css/file.css">
+
+    </head>
+    <body dir="rtl">
+
+
+        <!-- Arrow Up -->
+        <div class="arrow-up" @click="goTop()">
+            <i class="fas fa-arrow-circle-up"></i>
+        </div>
+
+        <!-- Messege icon -->
+        <div class="messege-icon">
+            <i class="fas fa-sms"></i>
+        </div>
+
+        <!-- Upper Bar -->
+        <div class="upper-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 text-right">
+                        <div class="row">
+                            <div class="col-6"> شحن مجاني للطلبات بقيمة 50 ريال </div>
+                            <div class="col-6">   توصيل سريع يصل الي 3 ساعات فقط   </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-6 text-left">
+                        <ul class="list-unstyled">
+                            <li> <a href="#"> تسجيل  </a> </li>
+                            <li> <a href="#"> تسجيل الدخول  </a> </li>
+                            <li> <a href="#"> البيع علي منصة موف ستور  </a> </li>
+                            <li> 
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        EN
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">AR</a>
+                                      <a class="dropdown-item" href="#">FR</a>
+                                      <a class="dropdown-item" href="#">ES</a>
+                                    </div>
+                                </div>    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="logo ">
+                            <img src="images/logo.png" alt="moovstore">
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        
+                        <div class="search-box">
+                            <select class="custom-form" name="cats" id="cats">
+                                    <option value="0" style="display: none"> جميع الفئات  </option>
+                                    <option value="21">  احذية </option>
+                                    <option value="18">  ملابس </option>
+                                    <option value="21">  احذية </option>
+                                    <option value="18">  ملابس </option>
+                            </select>
+                            <input type="text" name="value" class="form-control" placeholder="ابحث في الاقسام الخاصه بنا..." v-model="searchResult" autocomplete="off" >
+                            <button type="submit" v-on:click="validate()" >  <i class="fas fa-search"></i> <span></span> </button>
+                        </div>
+
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Header -->
+
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="slider">
+                            <p class="slider-title"></p>
+                            <div class="cats">
+                                <!-- 
+                                <div> <a href="#"> <i class="fas fa-address-card"></i> الذهب و الفضة  </a> <hr> </div>
+                                <a href="#">  <i class="fas fa-address-book"></i> المنزل </a> <hr>
+                                <a href="#">  <i class="fab fa-accessible-icon"></i> إلكترونيات</a> <hr>
+                                <a href="#">   <i class="fab fa-amilia"></i>أجهزة منزلية </a> <hr>
+                                <a href="#">  <i class="fas fa-american-sign-language-interpreting"></i> الذهب و الفضة </a> <hr>
+                                <a href="#">   <i class="fab fa-angellist"></i> رياضة </a> <hr>
+                                <a href="#">   <i class="fab fa-amilia"></i> الصحة والجمال</a> <hr>
+                                <a href="#">  <i class="fas fa-american-sign-language-interpreting"></i> الذهب و الفضة </a> <hr>
+                                <a href="#">   <i class="fab fa-angellist"></i>الأمهات و الأطفال </a> <hr>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9"></div>
+                </div>    
+            </div>
+        </div>
+
+        <!-- Electronics -->
+        <div class="electronics">
+
+            <div class="container">
+
+                    
+                <h2 class="text-right">اليكترونيات</h2>
+                <div class="title-underline purple"></div>
+
+                
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img1.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال  </p>
+                            <div class="product-rating">
+                                <img src="images/icons/star.png" alt="" class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img2.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال  </p>
+                            <div class="product-rating">
+                                <img src="images/icons/star.png" alt="" class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img3.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال  </p>
+                            <div class="product-rating">
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img4.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال </p>
+                            <div class="product-rating" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img1.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال  </p>
+                            <div class="product-rating">
+                                <img src="images/icons/star.png" alt="" class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img2.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال  </p>
+                            <div class="product-rating">
+                                <img src="images/icons/star.png" alt="" class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star.png" alt=""class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon">
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img3.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال  </p>
+                            <div class="product-rating">
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="images/product-imgs/img4.webp" alt="">
+                            </div>
+                            <p class="product-name"> ساعه فندربلو رجالي </p>
+                            <p class="product-price"> 2500 ريال </p>
+                            <div class="product-rating" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                                <img src="images/icons/star-gray.png" alt="" class="star-icon" >
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="card-btn"> <i class="fas fa-eye"></i> عرض </a>
+                                <a href="#" class="card-btn"> <i class="fas fa-cart-plus"></i> اضافه للعربه </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> 
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <h5> نبذه عنا</h5>
+                        <div class="title-underline white"></div>
+                        <p class="about-us">  هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. <br> ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما</p> 
+                        <p class="phone"> <i class="fas fa-phone"></i> &nbsp; 9865 896 505 - 236 &nbsp; | &nbsp; 2360 3923 236 - 385  </p>
+                        <p class="email"> <i class="far fa-envelope"></i> &nbsp; test@gmail.com    </p>
+                        <p class="social-media"> 
+                            <span> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </span>
+                            <span> <a href="#"> <i class="fab fa-twitter"></i> </a> </span>
+                            <span> <a href="#"> <i class="fab fa-instagram"></i> </a> </span>
+                            <span> <a href="#"> <i class="fab fa-snapchat-ghost"></i> </a> </span>
+                        </p>
+                    </div>
+                   
+
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5> معلومات عنا</h5>
+                                <div class="title-underline white"></div>
+                                <ul class="list-unstyled">
+                                    <li> <a href="#"> من نحن </a> </li>
+                                    <li> <a href="#"> منتجاتنا </a> </li>
+                                    <li> <a href="#"> العلامات التجارية </a> </li>
+                                    <li> <a href="#"> الشركات التابعه </a> </li>
+                                    <li> <a href="#"> العروض الخاصه </a> </li>
+                                    <li> <a href="#"> اسئلة و اجوبة </a> </li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <h5> الحساب الشخصي </h5>
+                                <div class="title-underline white"></div>
+                                <ul class="list-unstyled">
+                                    <li> <a href="#"> من نحن </a> </li>
+                                    <li> <a href="#"> منتجاتنا </a> </li>
+                                    <li> <a href="#"> العلامات التجارية </a> </li>
+                                    <li> <a href="#"> الشركات التابعه </a> </li>
+                                    <li> <a href="#"> العروض الخاصه </a> </li>
+                                    <li> <a href="#"> اسئلة و اجوبة </a> </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                     
+                    <div class="col-md-4">
+                        <div class="row">
+                            
+                            <div class="col-6">
+                                <h5> معلومات عنا</h5>
+                                <div class="title-underline white"></div>
+                                <ul class="list-unstyled ">
+                                    <li> <a href="#"> من نحن </a> </li>
+                                    <li> <a href="#"> منتجاتنا </a> </li>
+                                    <li> <a href="#"> العلامات التجارية </a> </li>
+                                    <li> <a href="#"> الشركات التابعه </a> </li>
+                                    <li> <a href="#"> العروض الخاصه </a> </li>
+                                    <li> <a href="#"> اسئلة و اجوبة </a> </li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <h5> لتحميل التطبيق </h5>
+                                <div class="title-underline white"></div>
+                                <a href="#">  <img src="images/icons/apple-store.png" alt="apple-store" class="app-store"> </a>
+                                <a href="#"> <img src="images/icons/google-store.png" alt="google-store" class="app-store"> </a> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <div class="line"></div>
+                <p>&copy; جميع الحقوق محفوطة 2020</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- JQUERY Framwork-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+        <!-- Popper Framwork-->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+        <!-- bootstrap Framwork-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- Vue Framwork-->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- File Js -->
+        <script src="js/file.js"></script>
+
+    </body>
+
+
+</html>
